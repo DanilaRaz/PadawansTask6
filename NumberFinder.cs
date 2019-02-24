@@ -6,7 +6,19 @@ namespace PadawansTask6
     {
         public static int? NextBiggerThan(int number)
         {
-            if( number > int.MaxValue || number < 1)
+            if (number < 0)
+            {
+                throw new ArgumentException();
+            }
+            if (number == int.MaxValue)
+            {
+                return null;
+            }
+            if (number <= 11)
+            {
+                return null;
+            }
+            if ( number > int.MaxValue || number < 1)
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -61,7 +73,11 @@ namespace PadawansTask6
 
             if(compare==int.MaxValue)
             {
-                return 0;
+                return null;
+            }
+            if ( compare == check)
+            {
+                return null;
             }
             return compare;
         }
